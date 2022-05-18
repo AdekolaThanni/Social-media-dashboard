@@ -1,0 +1,145 @@
+.followers-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 4rem;
+    grid-row-gap: 2rem;
+}
+
+.followers-stat {
+    background-color: var(--stat-bg);
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: .4rem;
+        background-color: red;
+        transform: translateY(-1rem);
+        border-top-left-radius: 20%;
+        border-top-right-radius: 20%;
+    }
+
+    & > * {
+        display: flex;
+        align-items: center;
+    }
+
+    &__media {
+        
+        & span {
+            margin-left: 1rem;
+        }
+    }
+
+    &__number {
+        flex-direction: column;
+        
+        & span:first-child {
+            font-size: 5rem;
+        }
+        
+        & .text {
+            text-transform: uppercase;
+            margin-top: .5rem;
+            font-size: 1.4rem;
+            letter-spacing: .15rem;
+        }
+    }
+
+    &__change {
+
+        & svg {
+            margin-right: .5rem;
+        }
+    }
+}
+
+#facebook {
+
+
+    &::before {
+        background-color: var(--facebook);
+    }
+}
+
+#twitter {
+
+
+    &::before {
+        background-color: var(--twitter);
+    }
+}
+
+#instagram {
+
+
+    &::before {
+        background-image: linear-gradient(to right, var(--instagram-from), var(--instagram-to));
+    }
+}
+
+#youtube {
+
+
+    &::before {
+        background-color: var(--youTube);
+    }
+}
+
+.interaction-stats {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 4rem;
+}
+
+.interaction {
+    &__stat {
+        background-color: var(--stat-bg);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: min-content;
+        grid-row-gap: 2rem;
+        padding: 2rem;
+        border-radius: .3rem;
+
+        & p:nth-child(even){
+            text-align: end;
+        }
+
+        & p:nth-child(3), & p:nth-child(4) {
+            display: flex;
+            align-items: center;
+        }
+
+        & p:nth-child(4) {
+            justify-content: end;
+        }
+    }
+
+    &__number {
+        font-size: 2rem;
+    }
+
+    &__change {
+
+        & svg {
+            transform: translateX(-.7rem);
+        }
+    }
+}
+
+.followers-stat__number span:first-child, .interaction__number {
+    font-weight: 700;
+    color: var(--dark-text);
+}
